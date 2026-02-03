@@ -1,11 +1,8 @@
 package com.example.pokemon.api;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.example.pokemon.pokeapi.PokeApi;
-import com.example.pokemon.pokeapi.PokeApiDto;
 
 @Service
 public class ApiService {
@@ -16,7 +13,7 @@ public class ApiService {
         this.pokeApi = pokeApi;
     }
 
-    public List<PokeApiDto> getAll() {
-        return this.pokeApi.getAllPokemon();
+    public void getAllPokemon() {
+        this.pokeApi.getAllPokemon();
     }
 }

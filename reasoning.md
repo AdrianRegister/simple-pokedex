@@ -6,8 +6,12 @@ I placed everything relating to the external Pokemon API in its own singleton se
 
 ## App
 
-My app consists of a simple, single controller and service. There is no repository layer as nothing is persisted. However, there is local caching. This is because the app will always return the same information, and given the long processing time in acquiring the information initially, it does not make sense to continuously repeat this call every single time.
+My app consists of a simple, single controller and service. There is no repository layer as nothing is persisted.
 
 ## DTO
 
 Each endpoint returns the data from the Pokemon API mapped via a DTO, only containing the fields we care about: name, height, weight and base experience.
+
+## Performance
+
+No caching, /init endpoint to populate json file that serves as pseudo-database
