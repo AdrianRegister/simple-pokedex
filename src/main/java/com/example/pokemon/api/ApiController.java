@@ -24,8 +24,9 @@ public class ApiController {
     }
 
     @RequestMapping("/init")
-    public void getAllPokemon() {
+    public Response getAllPokemon() {
         this.service.getAllPokemon();
+        return new Response("ok");
     }
 
     @RequestMapping("/pokemon")

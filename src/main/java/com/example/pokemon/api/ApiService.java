@@ -1,11 +1,11 @@
 package com.example.pokemon.api;
 
-import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.List;
+import java.nio.file.Path;
 
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import com.example.pokemon.pokeapi.PokeApi;
@@ -28,7 +28,7 @@ public class ApiService {
     public List<PokeApiDto> readFromJsonFile() {
         try {
             return objectMapper.readValue(
-                    new ClassPathResource("pokemon.json").getInputStream(),
+                    Files.newInputStream(Path.of("pokemon.json")),
                     new TypeReference<List<PokeApiDto>>() {}
             );
         } catch (Exception e) {
