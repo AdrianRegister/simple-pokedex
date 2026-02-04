@@ -6,7 +6,7 @@ The app consists of a simple, single controller and service. There is no reposit
 
 ### DTO
 
-Each endpoint returns the data from the Pokemon API mapped via a DTO, only containing the fields we care about: id, name, height, weight and base experience.
+The data returned by the app has been transformed from the raw Pokemon API response via a DTO, only containing the fields we care about: id, name, height, weight and base experience.
 If more fields from the raw response are needed, these fields can be added to the DTO on an individual basis. No other code needs to be touched. However, the `/init` endpoint will need to be called again.
 
 ### PokeAPI restrictions
@@ -78,4 +78,17 @@ Example response (JSON)
 
 ## PokeApi
 
-I placed everything relating to the external Pokemon API in its own singleton service. This maintains separations of concerns between my app and its external dependency.
+I placed everything relating to PokeAPI v2 in its own singleton service. This maintains separations of concerns between my app and its external dependency.
+
+## Tests
+
+Having never used junit / Spring Boot testing before, I heavily relied on AI assistance for this section. I have attempted to apply my own knowledge of best practices testing and test coverage to them.
+
+## Next steps...
+
+In order to make the app production-ready, the following features could be considered:
+
+- Integration tests between the controller and services
+- Full E2E test between the app: controller -> service -> PokeAPI
+- In-memory caching of app responses
+- Rate limiting

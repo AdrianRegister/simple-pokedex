@@ -28,8 +28,8 @@ public class ApiService {
     public List<PokeApiDto> readFromJsonFile() {
         try {
             return objectMapper.readValue(
-                    Files.newInputStream(Path.of("pokemon.json")),
-                    new TypeReference<List<PokeApiDto>>() {}
+                Files.newInputStream(Path.of("pokemon.json")),
+                new TypeReference<List<PokeApiDto>>() {}
             );
         } catch (Exception e) {
             throw new RuntimeException("Failed to read pokemon.json", e);
